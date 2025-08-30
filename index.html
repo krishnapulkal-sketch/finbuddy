@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FinBuddy</title>
+  <link rel="icon" href="/static/favicon.ico">
+  <link rel="stylesheet" href="/assets/assets/css/style.css" />
+  <style>
+    /* Simple fallback in case CSS path differs */
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">FinBuddy</div>
+    <nav class="tabs">
+      <button data-tab="landing" class="tab active">Landing</button>
+      <button data-tab="chatbot" class="tab">Chatbot</button>
+      <button data-tab="savings" class="tab">Savings</button>
+      <button data-tab="investments" class="tab">Investments</button>
+      <button data-tab="taxes" class="tab">Taxes</button>
+      <button data-tab="planning" class="tab">Planning</button>
+      <button data-tab="settings" class="tab">Settings</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="landing" class="panel visible">
+      <h1>Welcome to FinBuddy — your personal finance assistant.</h1>
+      <p>Use the tabs above to navigate between features.</p>
+      <ul>
+        <li>Chat with the bot</li>
+        <li>Track savings goals</li>
+        <li>Manage investments</li>
+        <li>Record taxes</li>
+        <li>Plan your financial future</li>
+        <li>Update settings</li>
+      </ul>
+    </section>
+
+    <section id="chatbot" class="panel">
+      <h2>Chatbot</h2>
+      <div class="chat">
+        <div class="chat-log" id="chatLog"></div>
+        <div class="chat-input">
+          <input id="chatMsg" placeholder="Ask about money, budgeting, investing..." />
+          <button id="sendBtn">Send</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="savings" class="panel">
+      <h2>Savings</h2>
+      <div class="crud">
+        <form id="savingsForm">
+          <input name="name" placeholder="Goal name" required />
+          <input name="target_amount" type="number" step="0.01" placeholder="Target amount" />
+          <input name="saved_amount" type="number" step="0.01" placeholder="Saved amount" />
+          <button type="submit">Create</button>
+        </form>
+        <div id="savingsList"></div>
+      </div>
+    </section>
+
+    <section id="investments" class="panel">
+      <h2>Investments</h2>
+      <div class="crud">
+        <form id="investForm">
+          <input name="type" placeholder="Type (Stock/Bond/...)" value="Stock" />
+          <input name="symbol" placeholder="Symbol (optional)" />
+          <input name="amount_invested" type="number" step="0.01" placeholder="Amount invested" />
+          <input name="current_value" type="number" step="0.01" placeholder="Current value" />
+          <input name="notes" placeholder="Notes (optional)" />
+          <button type="submit">Create</button>
+        </form>
+        <div id="investList"></div>
+      </div>
+    </section>
+
+    <section id="taxes" class="panel">
+      <h2>Taxes</h2>
+      <div class="crud">
+        <form id="taxForm">
+          <input name="year" type="number" placeholder="Year" required />
+          <input name="income" type="number" step="0.01" placeholder="Income" />
+          <input name="tax_paid" type="number" step="0.01" placeholder="Tax paid" />
+          <input name="refund_expected" type="number" step="0.01" placeholder="Refund expected" />
+          <button type="submit">Create</button>
+        </form>
+        <div id="taxList"></div>
+      </div>
+    </section>
+
+    <section id="planning" class="panel">
+      <h2>Planning</h2>
+      <div class="crud">
+        <form id="planForm">
+          <input name="goal" placeholder="Goal (e.g., Retirement)" required />
+          <input name="target_year" type="number" placeholder="Target year" />
+          <input name="estimated_amount" type="number" step="0.01" placeholder="Estimated amount" />
+          <input name="notes" placeholder="Notes (optional)" />
+          <button type="submit">Create</button>
+        </form>
+        <div id="planList"></div>
+      </div>
+    </section>
+
+    <section id="settings" class="panel">
+      <h2>Settings</h2>
+      <div class="settings">
+        <form id="settingsForm">
+          <input name="user_id" placeholder="User ID" value="demo" />
+          <input name="name" placeholder="Name" />
+          <select name="preferred_model">
+            <option value="">Auto</option>
+            <option value="ibm">IBM</option>
+            <option value="hf">Hugging Face</option>
+            <option value="openai">OpenAI</option>
+            <option value="gemini">Gemini</option>
+          </select>
+          <select name="theme">
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+          <label><input type="checkbox" name="notifications" checked /> Notifications</label>
+          <button type="submit">Save</button>
+        </form>
+        <pre id="settingsOut"></pre>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/assets/js/main.js"></script>
+</body>
+</html>
