@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinBuddy - Taxes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Inter", "Noto Sans", sans-serif;
+      background: #f8fafc;
+      color: #0e141b;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      border-bottom: 1px solid #e7edf3;
+      background: white;
+    }
+    header h2 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #0e141b;
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQFZffWsQbldk_9yShXSUDVrG1uUQzkZIYXwGN6ruYph76CMxfEemVWcDrkDQTd9qaG8CAl2nnjxufsebhnYlDHKrbJ0yc-eIvDLH1ppK5mpFHdg7MOQOM4YAA0WYHXfL_Jvco1HO82A7T-czIfVyNViNxZ6qQnjw5ywFuXuIePGB4kH5o5zLFhFgsj8Qee_8ecAmrHpyoODzufwJtjQXTK6-LmlupRvEBmnF3k5nSQzx4DLyjRfBmbh3eGJA3jJDLmFy9QHyJ-FLh") center/cover no-repeat;
+    }
+    button {
+      background: #e7edf3;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    /* Page Container */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 8px;
+    }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin: 24px 0 12px;
+    }
+    p.subtext {
+      color: #4e7397;
+      font-size: 0.9rem;
+      margin-bottom: 20px;
+    }
+
+    /* Calendar */
+    .calendar {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .month {
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+      flex: 1 1 300px;
+    }
+    .month-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+    }
+    .days p {
+      text-align: center;
+      font-weight: bold;
+      font-size: 0.8rem;
+    }
+    .days button {
+      height: 40px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      border-radius: 50%;
+      font-size: 0.9rem;
+      color: #0e141b;
+    }
+    .days button.active {
+      background: #1980e6;
+      color: white;
+    }
+
+    /* Inputs & Buttons */
+    input, select {
+      width: 100%;
+      padding: 14px;
+      border-radius: 8px;
+      border: none;
+      background: #e7edf3;
+      margin-bottom: 16px;
+      font-size: 1rem;
+    }
+    .primary-btn {
+      background: #1980e6;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Resources */
+    .resource {
+      display: flex;
+      gap: 16px;
+      align-items: stretch;
+      background: white;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      padding: 12px;
+    }
+    .resource div {
+      flex: 2;
+    }
+    .resource .thumb {
+      flex: 1;
+      border-radius: 8px;
+      background-size: cover;
+      background-position: center;
+    }
+    .resource-title {
+      font-weight: bold;
+      margin: 4px 0;
+    }
+    .resource p {
+      margin: 4px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex;align-items:center;">
+      <svg width="24" height="24" fill="black"><path d="M4 42C4 42 14 36 24 41C35 47 44 42 44 42V7C44 7 35 12 24 6C14 1 4 7 4 7V42Z"/></svg>
+      <h2>FinBuddy🤖</h2>
+    </div>
+    <nav class="nav-links">
+      <a href="#">Overview</a>
+      <a href="#">Savings</a>
+      <a href="#">Investments</a>
+      <a href="#">Taxes</a>
+      <a href="#">Planning</a>
+    </nav>
+    <div class="nav-actions">
+      <button>🔔</button>
+      <div class="avatar"></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Taxes</h1>
+    <p class="subtext">Stay on top of your tax obligations and optimize your tax strategy.</p>
+
+    <!-- Calendar -->
+    <h2>Tax Calendar</h2>
+    <div class="calendar">
+      <div class="month">
+        <div class="month-header">
+          <button>&lt;</button>
+          <p><b>April 2024</b></p>
+        </div>
+        <div class="days">
+          <p>S</p><p>M</p><p>T</p><p>W</p><p>T</p><p>F</p><p>S</p>
+          <button></button><button></button><button></button><button>1</button>
+          <button class="active">5</button><button>6</button><button>7</button>
+          <!-- continue... -->
+        </div>
+      </div>
+      <div class="month">
+        <div class="month-header">
+          <p><b>May 2024</b></p>
+          <button>&gt;</button>
+        </div>
+        <div class="days">
+          <p>S</p><p>M</p><p>T</p><p>W</p><p>T</p><p>F</p><p>S</p>
+          <button></button><button></button><button>1</button>
+          <button>2</button><button>3</button><button>4</button>
+          <!-- continue... -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Tax Estimator -->
+    <h2>Tax Estimator</h2>
+    <input type="text" placeholder="Enter your estimated annual income">
+    <button class="primary-btn">Calculate Estimated Taxes</button>
+
+    <!-- Deduction Finder -->
+    <h2>Deduction Finder</h2>
+    <select>
+      <option>Select option</option>
+      <option>two</option>
+      <option>three</option>
+    </select>
+    <select>
+      <option>Select option</option>
+      <option>two</option>
+      <option>three</option>
+    </select>
+    <button class="primary-btn">Find Deductions</button>
+
+    <!-- Resources -->
+    <h2>Tax Resources</h2>
+    <div class="resource">
+      <div>
+        <p class="subtext">Tax Guide</p>
+        <p class="resource-title">Understanding Tax Brackets</p>
+        <p class="subtext">Learn about the different tax brackets and how they affect your tax liability.</p>
+      </div>
+      <div class="thumb" style="background-image:url('https://picsum.photos/200/120');"></div>
+    </div>
+    <div class="resource">
+      <div>
+        <p class="subtext">Tax Tips</p>
+        <p class="resource-title">Maximizing Your Tax Refund</p>
+        <p class="subtext">Discover strategies to increase your tax refund and save money.</p>
+      </div>
+      <div class="thumb" style="background-image:url('https://picsum.photos/201/120');"></div>
+    </div>
+    <div class="resource">
+      <div>
+        <p class="subtext">Tax Planning</p>
+        <p class="resource-title">Year-End Tax Planning Checklist</p>
+        <p class="subtext">Prepare for the upcoming tax season with this comprehensive checklist.</p>
+      </div>
+      <div class="thumb" style="background-image:url('https://picsum.photos/202/120');"></div>
+    </div>
+  </div>
+</body>
+</html>

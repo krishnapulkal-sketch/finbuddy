@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinBuddy - Investment Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Manrope', 'Noto Sans', sans-serif;
+      background: #f9fbf9;
+      color: #121a0f;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      border-bottom: 1px solid #ebf2e9;
+      background: #fff;
+    }
+    header h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-left: 8px;
+    }
+    nav a {
+      margin: 0 12px;
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      color: #121a0f;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .notification-btn {
+      background: #ebf2e9;
+      border: none;
+      padding: 6px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Content */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: bold;
+    }
+    h2 {
+      font-size: 22px;
+      font-weight: bold;
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+    p.subtitle {
+      color: #639155;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    /* Summary Cards */
+    .summary {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .card {
+      flex: 1;
+      min-width: 200px;
+      background: #fff;
+      border: 1px solid #d6e5d2;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .card p.value {
+      font-size: 24px;
+      font-weight: bold;
+      margin: 8px 0 0;
+    }
+
+    /* Asset Allocation Bars */
+    .allocation {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      align-items: end;
+      text-align: center;
+      height: 200px;
+    }
+    .allocation div.bar {
+      width: 100%;
+      background: #ebf2e9;
+      border-top: 2px solid #639155;
+    }
+    .allocation p {
+      font-size: 13px;
+      font-weight: bold;
+      color: #639155;
+      margin-top: 6px;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border: 1px solid #d6e5d2;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      font-size: 14px;
+      border-top: 1px solid #d6e5d2;
+    }
+    th {
+      font-weight: 600;
+    }
+    td {
+      color: #639155;
+    }
+    td:first-child {
+      color: #121a0f;
+      font-weight: normal;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid #ebf2e9;
+      margin-top: 40px;
+    }
+    footer a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #639155;
+      font-size: 15px;
+    }
+    footer p {
+      margin-top: 20px;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div style="display: flex; align-items: center;">
+      <svg width="20" height="20" viewBox="0 0 48 48" fill="currentColor">
+        <path d="M4 42.4C4 42.4 14.1 36.1 24 41.2C35.1 46.9 44 42.2 44 42.2V7C44 7 35.1 11.7 24 6C14.1 0.9 4 7.3 4 7.3V42.4Z"/>
+      </svg>
+      <h2>FinBuddy🤖</h2>
+    </div>
+    <nav>
+      <a href="#">Dashboard</a>
+      <a href="#">Transactions</a>
+      <a href="#">Investments</a>
+      <a href="#">Planning</a>
+      <a href="#">Learn</a>
+    </nav>
+    <div class="header-right">
+      <button class="notification-btn">🔔</button>
+      <div class="avatar" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDlaGyqkVXOTzKQuHGR2NVNVM4lL9UdNKuIu55VCscQNNNWrA9yUqeT5O_OIdydXBdQCZAWAqanUpL9uSzW_kuHFcl52hr-J93Ldh_RfkRbzZtqoihWCZOUYkllZpZNIaUKZ7jwmpZ7yyM6eY9PC1qr9yWHKNfp6C92ZYWbcS7J7sjKM_p205BJnzH3MoHYOUXoLOTLkBmzEx0Rcv9lBX6Ti7pir1EOFw45dSjR8L6l_YEaaWDWE5G1CwQFpOjuCsjSzvu9f36eADDF');"></div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div class="container">
+    <h1>Investment Portfolio</h1>
+    <p class="subtitle">View your investment performance and asset allocation.</p>
+
+    <!-- Portfolio Summary -->
+    <h2>Portfolio Summary</h2>
+    <div class="summary">
+      <div class="card">
+        <p>Total Value</p>
+        <p class="value">$125,450</p>
+      </div>
+      <div class="card">
+        <p>Total Return</p>
+        <p class="value">+$15,450 (14%)</p>
+      </div>
+      <div class="card">
+        <p>Asset Allocation</p>
+        <p class="value">Stocks: 60%, Bonds: 25%, Funds: 15%</p>
+      </div>
+    </div>
+
+    <!-- Asset Allocation -->
+    <h2>Asset Allocation</h2>
+    <div class="allocation">
+      <div>
+        <div class="bar" style="height: 50%;"></div>
+        <p>Stocks</p>
+      </div>
+      <div>
+        <div class="bar" style="height: 10%;"></div>
+        <p>Bonds</p>
+      </div>
+      <div>
+        <div class="bar" style="height: 100%;"></div>
+        <p>Funds</p>
+      </div>
+    </div>
+
+    <!-- Investment Holdings -->
+    <h2>Investment Holdings</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Asset</th>
+          <th>Type</th>
+          <th>Quantity</th>
+          <th>Current Value</th>
+          <th>Change (%)</th>
+          <th>Return</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>TechCorp Stock</td>
+          <td>Stock</td>
+          <td>100</td>
+          <td>$25,000</td>
+          <td>+5%</td>
+          <td>+$1,250</td>
+        </tr>
+        <tr>
+          <td>Global Bonds</td>
+          <td>Bond</td>
+          <td>50</td>
+          <td>$30,000</td>
+          <td>+2%</td>
+          <td>+$600</td>
+        </tr>
+        <tr>
+          <td>Growth Mutual Fund</td>
+          <td>Mutual Fund</td>
+          <td>200</td>
+          <td>$40,000</td>
+          <td>+8%</td>
+          <td>+$3,200</td>
+        </tr>
+        <tr>
+          <td>Emerging Markets ETF</td>
+          <td>ETF</td>
+          <td>150</td>
+          <td>$20,000</td>
+          <td>+3%</td>
+          <td>+$600</td>
+        </tr>
+        <tr>
+          <td>Real Estate Investment Trust</td>
+          <td>REIT</td>
+          <td>75</td>
+          <td>$10,450</td>
+          <td>-1%</td>
+          <td>-$100</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <a href="#">Terms of Service</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Contact Us</a>
+    </div>
+    <p>@2024 FinBuddy. All rights reserved.</p>
+  </footer>
+</body>
+</html>

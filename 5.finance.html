@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinBuddy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Manrope', 'Noto Sans', sans-serif;
+      background: #f8fbfc;
+      color: #0e191b;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      border-bottom: 1px solid #e7f1f3;
+    }
+    header h2 {
+      font-size: 18px;
+      font-weight: bold;
+      margin-left: 10px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 36px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #0e191b;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .right-controls {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .notif-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: #e7f1f3;
+      cursor: pointer;
+    }
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 0 40px;
+    }
+    .section-header {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+    .section-sub {
+      font-size: 14px;
+      color: #4e8b97;
+    }
+    .card {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px;
+      border-radius: 12px;
+      background: #f8fbfc;
+      box-shadow: 0 0 4px rgba(0,0,0,0.1);
+      margin-top: 20px;
+    }
+    .card-content {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .card-sub {
+      font-size: 14px;
+      color: #4e8b97;
+    }
+    .btn {
+      background: #e7f1f3;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      width: fit-content;
+    }
+    .card-img {
+      flex: 1;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      aspect-ratio: 16/9;
+    }
+    h2.section-title {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 40px 0 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div style="display:flex; align-items:center;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="currentColor" width="24" height="24">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M24 18.4L42 11.5V34.4c0 .4-.3.8-.6.9L24 42V18.4Z"/>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M24 8.2 33.4 11.6 24 15.2 14.6 11.6 24 8.2ZM9 15.8l12 4.6v17.1L9 33V15.8Zm18 21.8V20.5l12-4.6V33l-12 4.6Zm-1.6-35.3c-.9-.3-1.9-.3-2.7 0L5 8.7C3.8 9.1 3 10.2 3 11.5v22.9c0 1.7 1 3.2 2.6 3.8L22.9 44.8c.7.3 1.5.3 2.2 0l17.4-6.7c1.5-.6 2.5-2.1 2.5-3.8V11.5c0-1.3-.8-2.4-2-2.8L25.4 2.3Z"/>
+      </svg>
+      <h2>FinBuddy🤖</h2>
+    </div>
+    <div class="right-controls">
+      <div class="nav-links">
+        <a href="#">Overview</a>
+        <a href="#">Transactions</a>
+        <a href="#">Investments</a>
+        <a href="#">Planning</a>
+        <a href="#">Credit Score</a>
+      </div>
+      <button class="notif-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M221.8 176c-5.5-9.6-13.8-36.7-13.8-72a80 80 0 1 0-160 0c0 35.3-8.3 62.4-13.8 72a16 16 0 0 0 13.8 24h40.8a40 40 0 0 0 78.4 0H208a16 16 0 0 0 13.8-24Zm-93.8 40a24 24 0 0 1-22.6-16h45.2a24 24 0 0 1-22.6 16Z"/>
+        </svg>
+      </button>
+      <div class="avatar" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBhUee6s5CXQGf6DqfMDPUxi277GZFjoaIrye3ggvnsxjciQe1Uize4oc3YmOezFdrPMfrucJkoSIH33PKe6LN70o54vOvn99hT59lfUa9f-fFaABEXar-Svqm2NwUpqGMLdtLBm2458p2V5E_E0R6PKPH8_SZDsAK9_YelCwmXc8Vgum2FrFxJwAyIl6lRQK-ac_SWOHvPjMbNkl6iuDWwkCpsdp7YEpToN5kkeoPcC1US1NIVeCowVH-0Dti4LwS2hvG0WiOiUTqh');"></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <div>
+      <p class="section-header">Financial Goals</p>
+      <p class="section-sub">Set and track your financial aspirations with personalized guidance.</p>
+    </div>
+
+    <!-- Goal 1 -->
+    <div class="card">
+      <div class="card-content">
+        <p class="card-title">Save for a Down Payment</p>
+        <p class="card-sub">Target: $20,000 | Timeframe: 2 years</p>
+        <button class="btn">View Details</button>
+      </div>
+      <div class="card-img" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCZ0W7DeZ8InU6_fC3YLWCKcA_DELV3iYMobv2rF9t_o0qVNP2Sxw19QFRSDkalI7AhxdzYeVOD7hd4qtQmOyJNdMwCfJrX9KQFkttXEX5ONTIQDX3i78WZtU_kwTbURRuOZPLglcBKsngVM30Lt-wPjqe4NY4b_GvT4mPPo47kQVdQrZpT3LYrSgMVnUkPRa-AYQvo4ABDsSagc30zd4xYmhOAU6aq_kEhJIQc6oH_drexW7Wyz0xEaolPD3M54ywjbOSYVNiliivT');"></div>
+    </div>
+
+    <!-- Add more cards here (Debt, Retirement, Recommendations, etc.) -->
+    
+    <h2 class="section-title">Personalized Recommendations</h2>
+
+    <div class="card">
+      <div class="card-content">
+        <p class="card-title">Savings Strategies</p>
+        <p class="card-sub">Maximize your savings with tailored tips and techniques.</p>
+        <button class="btn">Explore</button>
+      </div>
+      <div class="card-img" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDHFNLhyrd9lr_E4tmW4QNwGM5UwSVqztI5uXewEhzJ9a2cs6GlTxE4Mhoi9oAQGcnySqqB3cIXytOLU6wgscH4yMSx7-yMJ9GeWQQjPqFMCfDAu6MvBTKmcB1AW9-5xXKNsVENKeqfkR4Oz-oyRMQtolhJxO3RrobDJXMrre8InRUI51I5Obj-vppNlC4NnuKTrQhHG_lET_dNXd2YQe37rk3gkZL5N6TGD9jFcRBG7dpQsW39Xs-6oh0ixOncEw8SEWysPeAtILgf');"></div>
+    </div>
+
+  </div>
+</body>
+</html>

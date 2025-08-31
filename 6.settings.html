@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinBuddy Settings</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      border-bottom: 1px solid #000000;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    nav a {
+      color: rgb(0, 0, 0);
+      font-size: 14px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .right-actions {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .icon-btn {
+      background-color: #aac2b4;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: rgb(0, 0, 0);
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Layout */
+    .container {
+      max-width: 960px;
+      margin: auto;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 20px 0 10px;
+    }
+
+    .setting-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #96c5a9;
+      padding: 16px;
+      margin-bottom: 8px;
+      border-radius: 8px;
+    }
+
+    .setting-item .left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .icon {
+      width: 48px;
+      height: 48px;
+      background-color: #0d5b3e;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgb(0, 0, 0);
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .text p:first-child {
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .text p:last-child {
+      font-size: 13px;
+      color: #000000;
+    }
+
+    .caret {
+      color: rgb(0, 0, 0);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg width="20" height="20" fill="currentColor" viewBox="0 0 48 48"><path d="M4 42.4C4 42.4 14.1 36.1 24 41.2C35.1 46.9 44 42.2 44 42.2V7C44 7 35.1 11.7 24 6C14.1 0.9 4 7.3 4 7.3V42.4Z"></path></svg>
+      FinBuddy🤖
+    </div>
+    <nav>
+      <a href="#">Overview</a>
+      <a href="#">Transactions</a>
+      <a href="#">Budget</a>
+      <a href="#">Goals</a>
+      <a href="#">Investments</a>
+    </nav>
+    <div class="right-actions">
+      <button class="icon-btn">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 256 256">
+          <path d="M221.8,175.94C216.25,166.38,208,139.33,208,104a80,80,0,1,0-160,0c0,35.34-8.26,62.38-13.81,71.94A16,16,0,0,0,48,200H88.81a40,40,0,0,0,78.38,0H208a16,16,0,0,0,13.8-24.06Z"></path>
+        </svg>
+      </button>
+      <div class="avatar" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuD5DQOJQnhFZXcygXkr-zaV-34g7aPbtqYWriIWckfIGvkaRZfmReZv0Yebgr8xJkngP708dr1rMqcFw0R7TJ2u_I4i1U-rAp9WuhwD14H8DZdM76gBkCSBFOY49CifE2Cco-2AzOzklba9yJo8Jt3NnZygg7Tsl2mBGPSElASfWy7Zo7ZrPimQs-5tAtI5k0WVIvJMTV3DvPxkf5RvCUd3nrWAIZH0cnB2NDP2wVJ1tViBa2aFuTy6uxnobAVMDhcDt_Le2_XtBUxT');"></div>
+    </div>
+  </header>
+
+  <div class="container">
+    <h1>Settings</h1>
+
+    <h3>Account</h3>
+    <div class="setting-item">
+      <div class="left">
+        <div class="icon">👤</div>
+        <div class="text">
+          <p>Personal Information</p>
+          <p>Update your personal information</p>
+        </div>
+      </div>
+      <div class="caret">›</div>
+    </div>
+
+    <div class="setting-item">
+      <div class="left">
+        <div class="icon">🔒</div>
+        <div class="text">
+          <p>Password</p>
+          <p>Change your password</p>
+        </div>
+      </div>
+      <div class="caret">›</div>
+    </div>
+
+    <h3>Linked Accounts</h3>
+    <div class="setting-item">
+      <div class="left">
+        <div class="icon">🏦</div>
+        <div class="text">
+          <p>Financial Institutions</p>
+          <p>Manage your linked financial institutions</p>
+        </div>
+      </div>
+      <div class="caret">›</div>
+    </div>
+
+    <h3>App Preferences</h3>
+    <div class="setting-item">
+      <div class="left">
+        <div class="icon">🎨</div>
+        <div class="text">
+          <p>Appearance</p>
+          <p>Customize the app appearance</p>
+        </div>
+      </div>
+      <div class="caret">›</div>
+    </div>
+
+    <div class="setting-item">
+      <div class="left">
+        <div class="icon">🔔</div>
+        <div class="text">
+          <p>Notifications</p>
+          <p>Configure notification settings</p>
+        </div>
+      </div>
+      <div class="caret">›</div>
+    </div>
+  </div>
+</body>
+</html>

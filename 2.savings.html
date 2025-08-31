@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Savings</title>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap");
+
+    body {
+      margin: 0;
+      font-family: "Be Vietnam Pro", "Noto Sans", sans-serif;
+      background-color: #ffffff;
+      color: rgb(1, 0, 0);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      border-bottom: 1px solid #000000;
+    }
+    header h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      margin-right: 40px;
+    }
+    .nav-links a {
+      color: rgb(0, 0, 0);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .icon-btn {
+      background: #95d7ae;
+      border: none;
+      border-radius: 20px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .profile-pic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Layout */
+    .content {
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .section-header {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 20px 0 10px;
+    }
+    .subtext {
+      color: #96c5a9;
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    /* Cards */
+    .card {
+      background: #abe2c0;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+    .card p {
+      margin: 4px 0;
+    }
+    .card .title {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .card .value {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    /* Account + Transaction rows */
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #abe2c0;
+      padding: 12px 16px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    .row-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .row-icon {
+      background:rgb(226, 232, 226) ;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .row-text .title {
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .row-text .subtitle {
+      font-size: 14px;
+      color: #020a05;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #dfdcd3;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #de6604;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="header-left">
+      <svg width="24" height="24" fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+        <path d="M4 42.4379C4 42.4379 14.0962 36.0744 24 41.1692C35.0664 46.8624 44 42.2078 44 42.2078L44 7.01134C44 7.01134 35.068 11.6577 24.0031 5.96913C14.0971 0.876274 4 7.27094 4 7.27094L4 42.4379Z"></path>
+      </svg>
+      <h2>FinBuddy🤖</h2>
+    </div>
+    <div class="header-right">
+      <nav class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Investments</a>
+        <a href="#">Spending</a>
+        <a href="#">Planning</a>
+        <a href="#">Taxes</a>
+      </nav>
+      <button class="icon-btn">🔔</button>
+      <div class="profile-pic" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsFjESSXKuXvvltx3uNx9JhCMFL1u_RxaXdcJ-9BsH86lrn4I50NCRt9WgkexbFe0Bq4LhHSzjbXXc8sx2x1rCUBCAB2VXthPz4I1OWKikPIgNnueqlgwY-Kzr6pcZVWNyt_gODiR1azNsQVl5-taLbspuHZQxK_wBhTpzWg1Iu_bXVkPCcCW6sx6tQbUDj6g5ael4eKDKlka2cDTpZXCDu85GZ8pOa-AAkug7hGJNrwD9m4rNXpB723J8_7HMx6LX1wcGjjfOF85z');"></div>
+    </div>
+  </header>
+
+  <!-- Content -->
+  <div class="content">
+    <div>
+      <h1 style="font-size:32px; margin:0;">Savings</h1>
+      <p class="subtext">View your savings accounts and transactions</p>
+    </div>
+
+    <!-- Summary -->
+    <h2 class="section-header">Summary</h2>
+    <div class="card">
+      <p class="title">Total Savings</p>
+      <p class="value">$12,345</p>
+    </div>
+
+    <!-- Accounts -->
+    <h2 class="section-header">Accounts</h2>
+    <div class="row">
+      <div class="row-left">
+        <div class="row-icon">🏦</div>
+        <div class="row-text">
+          <p class="title">Primary Checking</p>
+          <p class="subtitle">Checking</p>
+        </div>
+      </div>
+      <p>$5,678</p>
+    </div>
+    <div class="row">
+      <div class="row-left">
+        <div class="row-icon">🏦</div>
+        <div class="row-text">
+          <p class="title">High-Yield Savings</p>
+          <p class="subtitle">Savings</p>
+        </div>
+      </div>
+      <p>$6,789</p>
+    </div>
+
+    <!-- Recent Transactions -->
+    <h2 class="section-header">Recent Transactions</h2>
+    <div class="row">
+      <div class="row-left">
+        <div class="row-icon">⬇</div>
+        <div class="row-text">
+          <p class="title">Deposit</p>
+          <p class="subtitle">Savings</p>
+        </div>
+      </div>
+      <p>$1,234</p>
+    </div>
+    <div class="row">
+      <div class="row-left">
+        <div class="row-icon">⬆</div>
+        <div class="row-text">
+          <p class="title">Withdrawal</p>
+          <p class="subtitle">Checking</p>
+        </div>
+      </div>
+      <p>$567</p>
+    </div>
+    <div class="row">
+      <div class="row-left">
+        <div class="row-icon">$</div>
+        <div class="row-text">
+          <p class="title">Interest Earned</p>
+          <p class="subtitle">Savings</p>
+        </div>
+      </div>
+      <p>$12.34</p>
+    </div>
+
+    <div style="text-align: right; margin-top: 10px;">
+      <button class="btn">View All Transactions</button>
+    </div>
+  </div>
+</body>
+</html>

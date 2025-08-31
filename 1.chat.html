@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinBuddy </title>
+  <style>
+    /* Google Fonts */
+    @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Noto+Sans:wght@400;500;700;900&display=swap");
+
+    body {
+      margin: 0;
+      font-family: Inter, "Noto Sans", sans-serif;
+      background-color: #96c5a9;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+  
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      border-bottom: 1px solid #e7edf3;
+      background: #fff;
+    }
+    header h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: bold;
+      color: #0e141b;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #0e141b;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .profile-pic {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-size: cover;
+      background-position: center;
+    }
+    .settings-btn {
+      background: #e7edf3;
+      border: none;
+      border-radius: 6px;
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+    }
+
+    /* Chat area */
+    .chat-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      padding: 20px 40px;
+    }
+    .chat-box {
+      max-width: 960px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .chat-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin: 10px 0 20px;
+      color: #0e141b;
+    }
+
+    /* Messages */
+    .message-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    .message-row.user {
+      justify-content: flex-end;
+    }
+    .message {
+      max-width: 360px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    .bot .message {
+      background: #c3c8ce;
+      color: #0e141b;
+    }
+    .user .message {
+      background: #a3a7ab;
+      color: #0e141b;
+    }
+    .sender-name {
+      font-size: 13px;
+      color: #4e7397;
+      margin: 0 0 4px 0;
+    }
+    .message-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Input bar */
+    .input-bar {
+      display: flex;
+      align-items: center;
+      padding: 12px 20px;
+      border-top: 1px solid #e7edf3;
+      background: #fff;
+    }
+    .input-bar input {
+      flex: 1;
+      height: 45px;
+      border: none;
+      border-radius: 8px;
+      padding: 0 12px;
+      background: #e7edf3;
+      font-size: 15px;
+    }
+    .input-bar input:focus {
+      outline: none;
+    }
+    .input-bar button {
+      margin-left: 10px;
+      background: #4799eb;
+      color: #0e141b;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+
+  <header>
+    <div class="header-left">
+      <h2>FinBuddy🤖 </h2>
+    </div>
+    <div class="header-right">
+         <nav class="nav-links">
+  <a href="1.chat.html">Chat</a>
+  <a href="2.savings.html">Savings</a>
+  <a href="4.investment.html">Investments</a>
+  <a href="3.taxes.html">Taxes</a>
+  <a href="5.finance.html">Planning</a>
+  <a href="6.settings.html">setting</a>
+</nav>
+      <button class="settings-btn">⚙</button>
+      <div class="profile-pic" style="background-image:url('https://lh3.googleusercontent.com/a-/AOh14GjB7W-pp4Q')"></div>
+    </div>
+  </header>
+
+  <!-- Chat Section -->
+  <div class="chat-container">
+    <div class="chat-box">
+      <p class="chat-title">Chat with FinBuddy
+      </p>
+
+      <!-- Bot message -->
+      <div class="message-row bot">
+        <div class="profile-pic" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCAXs4nau')"></div>
+        <div class="message-content">
+          <p class="sender-name">FinBuddy</p>
+          <div class="message">Hi there! I'm FinBuddy, your personal finance assistant. How can I help you today?</div>
+        </div>
+      </div>
+
+      <!-- User message -->
+      <div class="message-row user">
+        <div class="message-content">
+          <p class="sender-name" style="text-align:right;">Sophia</p>
+          <div class="message">Hi FinBuddy, I'm looking for advice on how to start saving for a down payment on a house.</div>
+        </div>
+        <div class="profile-pic" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBnj8UKGE67')"></div>
+      </div>
+
+      <!-- Bot reply -->
+      <div class="message-row bot">
+        <div class="profile-pic" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuBjpH33ygh')"></div>
+        <div class="message-content">
+          <p class="sender-name">FinBuddy</p>
+          <div class="message">That's a great goal, Sophia! Could you tell me a bit about your current financial situation?</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input bar -->
+  <div class="input-bar">
+    <input type="text" placeholder="Type your message...">
+    <button>Send</button>
+  </div>
+</body>
+</html>
